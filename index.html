@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div class="center-flex"
-        style="backdrop-filter: blur(2px) url(#displacementFilter); -webkit-backdrop-filter: blur(2px) url(#displacementFilter);">
+    <div class="button-container"
+        style="backdrop-filter: blur(2px) url(#displacementFilter); -webkit-backdrop-filter: blur(2px) url(#displacementFilter); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); cursor: grab;">
         <svg class="center-flex-bg" width="264" height="56" viewBox="0 0 264 56" preserveAspectRatio="none"
             style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;display: none;">
             <defs>
@@ -27,6 +27,8 @@
         <button style="z-index:1;"><span class="material-icons">star</span></button>
         <button style="z-index:1;"><span class="material-icons">favorite</span></button>
     </div>
+
+    <script src="draggable.js"></script>
 </body>
 
 </html>

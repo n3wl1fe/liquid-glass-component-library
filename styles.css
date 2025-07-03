@@ -22,7 +22,7 @@ body {
     background-size: cover;
 }
 
-.center-flex {
+div.button-container {
     display: flex;
     gap: 1.5rem;
     position: relative;
