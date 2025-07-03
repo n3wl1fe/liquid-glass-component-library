@@ -25,7 +25,6 @@ body {
 div.button-container {
     display: flex;
     gap: 1.5rem;
-    /* filter: drop-shadow(-8px -10px 46px #0000005f); */
     border-radius: 8px;
     backdrop-filter: blur(2px) url(#displacementFilter);
     position: absolute;
