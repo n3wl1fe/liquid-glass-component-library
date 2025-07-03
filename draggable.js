@@ -4,9 +4,11 @@ let offsetX = 0;
 let offsetY = 0;
 
 container.addEventListener('mousedown', function (e) {
+    if (e.target !== container) return;
+    const { left, top } = container.getBoundingClientRect();
     isDragging = true;
-    offsetX = e.clientX - container.offsetLeft;
-    offsetY = e.clientY - container.offsetTop;
+    offsetX = e.clientX - (left + window.scrollX);
+    offsetY = e.clientY - (top + window.scrollY);
     container.style.cursor = 'grabbing';
 });
 
