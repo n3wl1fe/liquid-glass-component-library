@@ -1,22 +1,9 @@
 <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>
     <defs>
-        <linearGradient id='g' gradientTransform='rotate(-45)'>
-            <stop offset='0%' stop-color='green'/>
-            <stop offset='12.5%' stop-color='#33a02c'/>
-            <stop offset='25%' stop-color='#66b44c'/>
-            <stop offset='37.5%' stop-color='#99c86c'/>
-            <stop offset='50%' stop-color='#cccc8c'/>
-            <stop offset='62.5%' stop-color='#cc996c'/>
-            <stop offset='75%' stop-color='#cc664c'/>
-            <stop offset='87.5%' stop-color='#cc332c'/>
-            <stop offset='100%' stop-color='red'/>
+        <linearGradient id='g' x1='0%' y1='100%' x2='100%' y2='0%'>
+            <stop offset='0%' stop-color='red'/>
+            <stop offset='100%' stop-color='green'/>
         </linearGradient>
     </defs>
     <rect x='0' y='0' width='100' height='100' fill='url(#g)' rx='8' ry='8'/>
-    <defs>
-        <filter id='blur' x='-10%' y='-10%' width='120%' height='120%'>
-            <feGaussianBlur stdDeviation='3'/>
-        </filter>
-    </defs>
-    <rect x='5' y='5' width='90' height='90' fill='grey' filter='url(#blur)'/>
 </svg>
