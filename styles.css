@@ -26,19 +26,14 @@ div.button-container {
     display: flex;
     gap: 1.5rem;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: url(#displacementFilter);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: url(#displacementFilter) brightness(0.8);
     -webkit-backdrop-filter: url(#displacementFilter);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     cursor: grab;
-}
-
-svg.button-container-bg {
-    display: none;
 }
 
 button {
@@ -52,14 +47,4 @@ button {
     align-items: center;
     justify-content: center;
     transition: filter 0.2s ease, background-color 0.2s ease;
-}
-
-button:hover {
-    filter: grayscale(0.5);
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.material-icons {
-    font-size: 2rem;
-    color: white;
 }
