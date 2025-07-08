@@ -9,56 +9,62 @@
 </head>
 
 <body>
-    <div class="button-container">
-        <svg width="0" height="0">
-            <defs>
-                <filter id="displacementFilter" x="0%" y="0%" width="100%" height="100%"
-                    filterUnits="objectBoundingBox">
-                    <feturbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17"
-                        result="turbulence" />
-                    <fecomponenttransfer in="turbulence" result="mapped">
-                        <fefuncr type="gamma" amplitude="1" exponent="10" offset="0.5" />
-                        <fefuncg type="gamma" amplitude="0" exponent="1" offset="0" />
-                        <fefuncb type="gamma" amplitude="0" exponent="1" offset="0.5" />
-                    </fecomponenttransfer>
-                    <fegaussianblur in="turbulence" stdDeviation="3" result="softMap" />
-                    <fedisplacementmap in="SourceGraphic" in2="softMap" scale="100" xChannelSelector="R"
-                        yChannelSelector="G" />
-                </filter>
-                <symbol id="icon-face" viewBox="0 -960 960 960">
-                    <path
-                        d="M360-390q-21 0-35.5-14.5T310-440q0-21 14.5-35.5T360-490q21 0 35.5 14.5T410-440q0 21-14.5 35.5T360-390Zm240 0q-21 0-35.5-14.5T550-440q0-21 14.5-35.5T600-490q21 0 35.5 14.5T650-440q0 21-14.5 35.5T600-390ZM480-160q134 0 227-93t93-227q0-24-3-46.5T786-570q-21 5-42 7.5t-44 2.5q-91 0-172-39T390-708q-32 78-91.5 135.5T160-486v6q0 134 93 227t227 93Zm0 80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
-                </symbol>
-                <symbol id="icon-star" viewBox="0 0 24 24">
-                    <path
-                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </symbol>
-                <symbol id="icon-favorite" viewBox="0 0 24 24">
-                    <path
-                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                </symbol>
-            </defs>
-        </svg>
-        <button>
-            <!-- face.svg -->
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="#000000">
-                <use href="#icon-face" />
-            </svg>
-        </button>
-        <button>
-            <!-- star.svg -->
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="currentColor">
-                <use href="#icon-star" />
-            </svg>
-        </button>
-        <button>
-            <!-- favorite.svg -->
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="currentColor">
-                <use href="#icon-favorite" />
-            </svg>
-        </button>
+    <svg width="0" height="0">
+        <defs>
+            <filter id="displacementFilter" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+                <feturbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17"
+                    result="turbulence" />
+                <fecomponenttransfer in="turbulence" result="mapped">
+                    <fefuncr type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                    <fefuncg type="gamma" amplitude="0" exponent="1" offset="0" />
+                    <fefuncb type="gamma" amplitude="0" exponent="1" offset="0.5" />
+                </fecomponenttransfer>
+                <fegaussianblur in="turbulence" stdDeviation="3" result="softMap" />
+                <fedisplacementmap in="SourceGraphic" in2="softMap" scale="100" xChannelSelector="R"
+                    yChannelSelector="G" />
+            </filter>
+            <filter id="svg-invert">
+                <feColorMatrix type="matrix" values="-1 0 0 0 1
+               0 -1 0 0 1
+               0 0 -1 0 1
+               0 0 0 1 0" />
+            </filter>
+            <symbol id="icon-face" viewBox="0 0 24 24">
+                <path
+                    d="M9 17q-.825 0-1.412-.587Q7 15.825 7 15q0-.825.588-1.413Q8.175 13 9 13q.825 0 1.413.587Q11 14.175 11 15q0 .825-.587 1.413Q9.825 17 9 17Zm6 0q-.825 0-1.413-.587Q13 15.825 13 15q0-.825.587-1.413Q14.175 13 15 13q.825 0 1.413.587Q17 14.175 17 15q0 .825-.587 1.413Q15.825 17 15 17ZM12 21q3.35 0 5.675-2.325Q20 16.35 20 13q0-.6-.075-1.175Q19.85 11.25 19.65 10.5q-.525.125-1.05.188Q18.075 10.75 17.5 10.75q-2.275 0-4.3-.975Q11.175 8.8 9.75 7.05q-.8 1.95-2.275 3.375Q6 11.85 4 12v.15q0 3.35 2.325 5.675Q8.65 21 12 21Zm0 1q-2.075 0-3.938-.788Q6.2 20.425 4.95 19.05 3.7 17.675 2.912 15.812 2.125 13.95 2.125 12q0-2.075.788-3.938Q4.2 6.2 5.575 4.95 6.95 3.7 8.812 2.912 10.675 2.125 12 2.125q2.075 0 3.938.788Q17.8 3.575 19.05 4.95q1.25 1.375 2.038 3.238Q21.875 10.05 21.875 12q0 2.075-.788 3.938Q19.8 17.8 18.425 19.05q-1.375 1.25-3.238 2.038Q13.95 21.875 12 21.875Z" />
+            </symbol>
+            <symbol id="icon-star" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </symbol>
+            <symbol id="icon-favorite" viewBox="0 0 24 24">
+                <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </symbol>
+        </defs>
+    </svg>
+    <div class="button-container" onclick="console.log('Container clicked!')">
+        <div class="button-container-foreground">
+            <button style="display: grid; grid-template-areas: 'iconStack';">
+                <div id="face">
+                </div>
+            </button>
+            <button>
+                <!-- star.svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <use href="#icon-star" />
+                </svg>
+            </button>
+            <button>
+                <!-- favorite.svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <use href="#icon-favorite" />
+                </svg>
+            </button>
+        </div>
+        <div class="button-container-background"></div>
     </div>
-
     <script src="draggable.js"></script>
 </body>
 

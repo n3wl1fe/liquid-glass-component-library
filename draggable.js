@@ -5,7 +5,9 @@
     let offsetY = 0;
 
     container.addEventListener('mousedown', function (e) {
-        if (e.target !== container) return;
+        console.log(e.target);
+        if (e.target !== container.querySelector('.button-container-foreground')) return;
+        console.log('mousedown');
         const { left, top } = container.getBoundingClientRect();
         isDragging = true;
         offsetX = e.clientX - (left + window.scrollX);
